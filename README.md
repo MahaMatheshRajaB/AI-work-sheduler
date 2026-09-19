@@ -284,8 +284,20 @@ Open `http://localhost:5173` in your browser.
 6. **Enterprise SSO & Directory Sync**: SCIM and SAML 2.0 integration with Okta, Azure AD, and Google Workspace.
 
 ## **Planed to :** 
-        Create this webpage into a application 
+      
+      We are currently working on developing this web application into a complete software solution, with plans to extend it to Android and iOS applications in the future.
+
+As the application is now ready to be launched on the web, our next step is to collect feedback and ratings from real users. Today, we have planned to reach at least 50 users and encourage them to try the application and share their genuine feedback. This will help us understand what works well, identify areas that need improvement, and make the application more useful and user-friendly.
+
+We also plan to share the project on LinkedIn and reach out to our connections to get more people involved in testing the application. Through this initial user feedback and networking, we hope to improve the application based on real-world usage and gradually expand its reach.
 
 ## **Summary:**
-       AI-powered workforce scheduling platform that intelligently assigns tasks based on skills, availability, workload, experience, and schedule fit. Features autonomous task allocation, conflict-based rescheduling, SLA monitoring, multi-level escalation, and role-based dashboards for organizations.
+     Work Scheduler is an intelligent, organization-independent work allocation and management system that uses AI agents to automate the complete workflow from higher authorities to team leaders and employees.
+When a client assigns work to an organization, the AI agent analyzes the employee’s department, skills, experience, availability, current workload, and leave status and automatically assigns the right person for the task. Work can flow from MD/Manager → Team Leader → Employee, with each role having a separate dashboard and access level.
+If an employee or team leader is unavailable, overloaded, or fails to complete the assigned work, the AI agent can report the issue to the appropriate higher authority and intelligently reschedule the task to another suitable person. This creates a continuous and adaptive workflow without requiring managers to manually track every task.
+The system is designed to work across IT companies, businesses, schools, colleges, hospitals, government organizations, and other institutions, adapting its scheduling rules according to the organization type and user-provided requirements.
+
+Core idea:
+“The AI agent acts as the bridge between every level of an organization—understanding the work, assigning it to the right person, monitoring progress, escalating delays, and automatically rescheduling when required.”
+Each organization gets its own secure ID and password, with role-based access for Higher Authority, Team Leaders/Managers, and Employees, ensuring that users can access only the information and functions relevant to their role.
 
