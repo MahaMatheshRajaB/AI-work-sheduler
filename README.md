@@ -11,23 +11,30 @@
 
 ## 1. Executive Summary
 
-Organizations across every industry—**IT & Software enterprises, Hospitals, Colleges & Universities, Manufacturing plants, and Government bodies**—rely heavily on manual, error-prone workforce scheduling. Higher authorities delegate blindly to department heads, who then assign tasks based on intuition rather than empirical data. This creates skill mismatches, severe workload imbalances (80%+ burnout on key contributors), absence blindspots when staff take emergency leaves, and delayed escalations.
+Every industry, from IT & Software enterprises to Hospitals, Colleges & Universities Manufacturing plants and Government bodies relies heavily on workforce scheduling. Manual scheduling is prone to errors. Higher authorities delegate scheduling to department heads. Department heads then assign tasks based on intuition than data. This creates skill mismatches, heavy workload imbalances and than 80 % burnout among key contributors. It also produces spots when staff take emergency leaves and causes delayed escalations.
 
-**AI Work Scheduler** solves this by inserting an **Autonomous AI Agent Orchestrator** between management and staff. The platform dynamically models organizational hierarchies, evaluates multi-criteria candidate fitness, monitors real-time task progress, autonomously reallocates tasks when emergency unavailabilities occur, and escalates impending SLA breaches up a multi-tiered hierarchy.
+**AI Work Scheduler** solves this issue by inserting an Autonomous AI Agent Orchestrator between management and staff. AI Work Scheduler dynamically models hierarchies evaluates many criteria to find the best candidate, for each task monitors real‑time task progress reallocates tasks automatically when emergency unavailabilities occur and escalates impending SLA breaches up a multi‑tiered hierarchy
 
 ---
 
 ## 2. Multi-Organization Domain Adaptability
 
-The platform is **not hard-coded for software engineers**. Through configurable organizational metadata, the entire application dynamically alters its terminology, roles, shifts, and skill taxonomies:
+I see that the platform is not fixed to software engineers. The platform can change its terms, roles, shifts and skill lists automatically by using adjustable organization data:
 
-| Dimension | IT / Software Enterprise (`ORG-TECH`) | Healthcare / Hospital (`ORG-HOSP`) | College / University (`ORG-COLL`) |
+| Dimension | IT / Software Enterprise (`ORG-TECH`) | Healthcare / Hospital (`ORG-HOSP`) | College / University (`ORG-COLL`)
+
 | :--- | :--- | :--- | :--- |
+
 | **Higher Authority** | Chief Executive Officer (CEO) | Hospital Director / CMO | College Principal / Dean |
+
 | **Manager** | Engineering Project Lead | Department Head / Charge Nurse | Head of Department (HOD) |
+
 | **Employee / Staff** | Software Engineer / DevOps Lead | ER Physician / ICU Staff Nurse | Professor / Lab Instructor |
-| **Department** | Engineering Units (ENG, QA, DevOps) | Clinical Wards (ER, ICU, Gen Med) | Academic Depts (CSE, AI & DS) |
-| **Work Unit** | Sprint Task / Migration | Clinical Duty / Patient Intake | Academic Assignment / Exam Prep |
+
+| **Department** | Engineering Units (ENG, QA, DevOps) | Clinical Wards (ER, ICU, Gen Med) | Academic Depts (CSE, AI & DS)
+
+| **Work Unit** | Sprint Task / Migration Clinical Duty / Patient Intake | Academic Assignment / Exam Prep |
+
 | **Key Skills** | FastAPI, React, AWS, Docker | Emergency Triage, ICU, ACLS | Pedagogy, Exam Formulation, Labs |
 
 ---
@@ -78,33 +85,45 @@ The platform is **not hard-coded for software engineers**. Through configurable 
 ```
 
 ### The 7 Autonomous AI Agents
-1. **Task Analysis Agent**: Ingests task title, description, and requirements. Generates structured subtasks and infers priority.
-2. **Skill Matching Agent**: Evaluates required skill taxonomy against candidate employee verified skills and proficiency levels (1–5).
-3. **Availability Agent**: Checks real-time shift calendars, verified leave records, and pending time-off requests.
-4. **Workload Balancing Agent**: Computes active capacity utilization (0%–100%) based on active assignments vs weekly limits, penalizing overload.
-5. **Deterministic Scheduling Engine**: Computes explainable candidate suitability scores and alternative candidate rankings.
-6. **Conflict & Rescheduling Agent**: Detects when assigned personnel go on leave and immediately reallocates affected work to qualified alternatives.
-7. **Monitoring & Escalation Agent**: Evaluates progress vs elapsed schedule. Dispatches Level 1, 2, or 3 escalations when milestones are breached.
 
+1. **Task Analysis Agent**: This agent looks at the task title, description and requirements. It then creates a list of tasks and decides which ones are most important.
+
+2. **Skill Matching Agent**: This agent checks the skills that are needed against the skills that each employee has using a scale from one to five to show how good they are.
+
+3. **Availability Agent**: This agent checks the shift schedules confirmed leave records and any pending time‑off requests to see who can work.
+
+4. **Workload Balancing Agent**: This agent calculates how busy each worker is, from zero percent to one hundred percent, based on jobs and weekly limits and it reduces the load when someone is overloaded.
+
+5. **Deterministic Scheduling Engine**: This engine calculates scores that show how suitable each candidate is and lists alternative options.
+
+6. **Conflict & Rescheduling Agent**: This agent finds out when workers go on leave and quickly moves their work to qualified workers.
+
+7. **Monitoring & Escalation Agent**: This agent watches progress, against the schedule. It sends Level 1  2 or 3 alerts when a milestone is missed.
 ---
 
 ## 4. Scheduling Algorithm & Mathematical Scoring
 
-The platform uses a transparent, deterministic scoring engine so every allocation is explainable to judges and managers:
+The platform uses a clear and definite scoring system so every assignment can be explained to judges and managers:
 
-$$\text{Score} = (0.30 \times S) + (0.20 \times D) + (0.20 \times A) + (0.10 \times E) + (0.10 \times W) + (0.10 \times F)$$
+$$\text{Score} = (0.30 \times S) + (0.20 \times D) + (0.20 \times A). 0.10 \Times E). 0.10 \Times W). 0.10 \Times F)$$
 
 Where:
-- **Skill Match ($S$, 30%)**: Overlap ratio between task requirements and candidate's skills, weighted by verified proficiency level (1–5).
-- **Department Match ($D$, 20%)**: $100\%$ if candidate is in the target department; $35\%$ for cross-department candidates.
-- **Availability ($A$, 20%)**: $100\%$ if employee is available during target deadline; $0\%$ if marked `ON_LEAVE`, `SICK`, or `UNAVAILABLE`.
-- **Experience Match ($E$, 10%)**: Ratio of candidate's verified tenure vs minimum required years.
-- **Workload Balance ($W$, 10%)**: Inverses current capacity load. Staff with $\le 20\%$ load receive $100\%$; staff $>80\%$ load receive $5\%$.
-- **Schedule Fit ($F$, 10%)**: Alignment between task shift (Morning/General/Night) and employee's working shift.
+
+- **Skill Match (S, 30%)**: How much the task requirements match the candidates skills, based on verified skill level (1–5).
+
+- **Department Match (D, 20%)**: 100% if the candidate is in the department being targeted; 35% if the candidate is from a department.
+
+- **Availability (A, 20%)**: 100% if the employee's available during the deadline; 0% if marked as ON_LEAVE, SICK or UNAVAILABLE.
+
+- **Experience Match (E 10%)**: How long the candidate has worked compared to the required years.
+
+- **Workload Balance (W 10%)**: This is the opposite of workload. Employees with 20% or less workload get 100%; employees with than 80% workload get 5%.
+
+- **Schedule Fit (F, 10%)**: How well the task shift (Morning/General/Night) matches the employees shift.
 
 ### Explainability Example
-> *"David Miller selected because: High required skill match (100%) • Aligned with Core Engineering • Available during required schedule (Workload: 20%) • 5.0 years relevant experience"*
 
+> "David Miller selected because: required skill match (100%) • Aligned with Core Engineering • Available, during required schedule (Workload: 20%) • 5.0 years relevant experience"
 ---
 
 ## 5. Distinct Role-Based Dashboards
