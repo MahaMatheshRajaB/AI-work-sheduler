@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ai-work-scheduler-backend
+    env: python
+    region: singapore
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PROJECT_NAME
+        value: AI Work Scheduler
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "1440"
+      - key: DATABASE_URL
+        value: sqlite:///./scheduler.db
+      - key: WEIGHT_SKILL
+        value: "0.30"
+      - key: WEIGHT_DEPARTMENT
+        value: "0.20"
+      - key: WEIGHT_AVAILABILITY
+        value: "0.20"
+      - key: WEIGHT_EXPERIENCE
+        value: "0.10"
+      - key: WEIGHT_WORKLOAD
+        value: "0.10"
+      - key: WEIGHT_SCHEDULE_FIT
+        value: "0.10"
+      - key: GEMINI_API_KEY
+        value: ""
+      - key: OPENAI_API_KEY
+        value: ""

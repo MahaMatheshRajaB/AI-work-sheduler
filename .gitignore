@@ -37,6 +37,7 @@ dist-ssr/
 
 # SQLite Database / Local storage
 *.sqlite3
+*.db
 *.db-journal
 
 # Environment variables
