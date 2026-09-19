@@ -301,3 +301,4 @@ Core idea:
 “The AI agent acts as the bridge between every level of an organization—understanding the work, assigning it to the right person, monitoring progress, escalating delays, and automatically rescheduling when required.”
 Each organization gets its own secure ID and password, with role-based access for Higher Authority, Team Leaders/Managers, and Employees, ensuring that users can access only the information and functions relevant to their role.
 
+
