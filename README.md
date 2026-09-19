@@ -264,9 +264,9 @@ Open `http://localhost:5173` in your browser.
 5. **Mobile Native Application**: React Native / Flutter apps with offline shift check-in and push notifications.
 6. **Enterprise SSO & Directory Sync**: SCIM and SAML 2.0 integration with Okta, Azure AD, and Google Workspace.
 
-**Planed to :** 
+## **Planed to :** 
         Create this webpage into a application 
 
-**Summary:**
+## **Summary:**
        AI-powered workforce scheduling platform that intelligently assigns tasks based on skills, availability, workload, experience, and schedule fit. Features autonomous task allocation, conflict-based rescheduling, SLA monitoring, multi-level escalation, and role-based dashboards for organizations.
 
