@@ -1,15 +1,16 @@
 services:
   - type: web
-    name: ai-work-scheduler-backend
+    name: work-scheduler
     env: python
     region: singapore
     plan: free
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    rootDir: .
+    buildCommand: >
+      cd frontend && npm ci && npm run build && cd ../backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PROJECT_NAME
-        value: AI Work Scheduler
+        value: Work Scheduler
       - key: SECRET_KEY
         generateValue: true
       - key: ACCESS_TOKEN_EXPIRE_MINUTES

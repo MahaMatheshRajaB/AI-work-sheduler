@@ -1,0 +1,5 @@
+{
+  "appId": "com.aiworkscheduler.app",
+  "appName": "Work Scheduler",
+  "webDir": "dist"
+}
